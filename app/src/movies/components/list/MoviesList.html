@@ -1,0 +1,21 @@
+<md-content class="md-padding" layout-xs="column" layout="row">
+  <div flex layout="row" layout-align="center" layout-wrap>
+
+    <md-card style="max-width: 300px;" flex="33" ng-repeat="movie in $ctrl.movies">
+      <img ng-src="{{movie.Poster}}" class="md-card-image movie-img">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{movie.Title}}</span>
+          <span class="md-subhead">Year: {{movie.Year}}</span>
+          <span class="md-subhead">Type: {{movie.Type}}</span>
+
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="$ctrl.openDialog(movie.imdbID)">More Details</md-button>
+      </md-card-actions>
+
+    </md-card>
+  </div>
+</md-content>
+

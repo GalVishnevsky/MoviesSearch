@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Movies Search</title>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel="stylesheet" href="./jspm_packages/github/angular/bower-material@master/angular-material.css" />
+  <link rel="stylesheet" href="./assets/app.css" />
+</head>
+
+<body ng-cloak layout="column" ng-controller="AppController as app">
+
+  <md-toolbar layout="row" class="md-toolbar-tools">
+    <div layout="row" class="search-bar" layout-align="center">
+      <md-input-container class="md-accent">
+        <label>Search</label>
+        <input ng-model="app.searchTerm" ng-keyup="app.searchMovie()">
+      </md-input-container>
+    </div>
+  </md-toolbar>
+
+  <div layout="column" layout-align=" center center" ng-if="app.movies.length > 0" style="margin: 18px;">
+    <paging flex cl-pages="app.paging.total" cl-steps="6" cl-page-changed="app.searchMovie()" cl-current-page="app.paging.page"></paging>
+  </div>
+  <div flex layout="row">
+    <div ng-if="app.searchTerm && app.movies.length === 0 && !app.searching" layout="column" class="no-results-title" layout-align="center center">
+      <h2> No Results Found</h2>
+    </div>
+    <div ng-if="app.searchTerm && app.searching" layout="column" class="no-results-title" layout-align="center center">
+      <md-progress-circular></md-progress-circular>
+    </div>
+    <movies-list ng-if="app.movies.length > 0 && !app.searching" movies="app.movies" on-selected="app.openDialog">
+    </movies-list>
+
+  </div>
+
+  <script src="./jspm_packages/system.js" type="text/javascript"></script>
+  <script src="config.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    System
+      .import('src/boot/boot')
+      .catch(console.error.bind(console)); // make sure any errors print to console
+  </script>
+
+</body>
+
+</html>

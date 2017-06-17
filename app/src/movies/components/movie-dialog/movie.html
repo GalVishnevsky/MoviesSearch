@@ -1,0 +1,26 @@
+<md-dialog>
+    <md-dialog-content>
+        <div class="md-dialog-content" layout="row" layout-margin ng-if="info.Title">
+            <img ng-src="{{info.Poster}}" />
+            <div>
+                <h2>{{info.Title}}</h2>
+                <p>Year: {{info.Year}}</p>
+                <p>Type: {{info.Type}}</p>
+                <p>Rated: {{info.Rated}}</p>
+                <p>Released: {{info.Released}}</p>
+                <p>Runtime: {{info.Runtime}}</p>
+                <p>Genre: {{info.Genre}}</p>
+                <br>
+                <p>Language: {{info.Language}}</p>
+                <p>Country: {{info.Country}}</p>
+                <br>
+                <p>Director: {{info.Director}}</p>
+                <p>Writer: {{info.Writer}}</p>
+                <p>Actors: {{info.Actors}}</p>
+                <br>
+                <p>Plot: {{info.Plot}}</p>
+            </div>
+        </div>
+    </md-dialog-content>
+
+</md-dialog>
