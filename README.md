@@ -1,6 +1,6 @@
 # Movies Search
 
-### Getting Started
+### Deployment
 
 Clone this repository and execute the following commands in a terminal:
 

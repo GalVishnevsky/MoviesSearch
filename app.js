@@ -3,6 +3,6 @@ const app = express()
 
 app.use(express.static('app'))
 
-app.listen(80, () => {
-    console.log('Movies app listening on port 3000!')
+app.listen(8081, () => {
+    console.log('Movies app listening on port 8081!')
 })

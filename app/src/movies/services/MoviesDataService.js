@@ -1,6 +1,6 @@
 
 function MoviesDataService($http, $q) {
-  let apikey = '289ba303';
+  let apikey = 'thewdb';
   let baseUrl = 'https://www.omdbapi.com';
   let canceler = $q.defer();
   let resolved = false;
